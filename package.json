@@ -1,0 +1,23 @@
+{
+  "name": "controledegastospessoais",
+  "version": "1.0.0",
+  "description": "neste projeto irei fazer um site basico para controle de gastos pessoais",
+  "main": "index.js",
+  "repository": "git@github.com:LuizFelipedeSouza95/controleDeGastosPessoais.git",
+  "author": "Luiz Felipe de Souza",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nodemon ./public/index.js",
+    "build": "rm -rf ./dist && tsc",
+    "start": "node ./public/index.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
