@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include ('./layouts/head.ejs')%>
+
+  <body id="body-pag-inicial">
+
+    <main class="container">
+
+            <div id="formCreate">
+    
+                <h2>Create Account</h2>
+                <form class="formCreate" id="formCreate">
+                    <label class="label-input" for="">
+                        <i class="far fa-user icon-modify"></i>
+                        <div class="form-floating">
+                            <input id="nameCreate" type="Name" className="email" class="form-control" placeholder="Email">
+                            <label for="nameCreate">Name</label>
+                        </div>
+                    </label>
+                    <div id="returnErrorNameCreate" class="returnErrors mb-3"></div>
+
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <div class="form-floating">
+                            <input id="emailCreate" name="email" type="email" class="form-control" placeholder="Email">
+                            <label for="inputEmailCreate">Email</label>
+                        </div>
+                    </label>
+                    <div id="returnErrorEmailCreate" class="returnErrors mb-3"></div>
+
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <div class="form-floating">
+                            <input id="passwordCreate" type="password" class="form-control" placeholder="Password">
+                            <label for="passwordCreate">Password</label>
+                        </div>
+                    </label>
+                    <div id="returnErrorPasswordCreate" class="returnErrors mb-3"></div>
+
+                    <div id="returnSuccessCreate"></div>
+                    
+                    <button type="button" class="btn_signUp" id="btn_Create" onclick="{createUser()}">Create Account</button>
+                </form>
+    
+    
+<!--                     <div class="social-media text-center">
+                        <ul class="list-social-media">
+                            <a class="link-social-media" href="#">
+                                <li class="item-social-media">
+                                    <i class="fab fa-facebook-f"></i>        
+                                </li>
+                            </a>
+                            <a class="link-social-media" href="#">
+                                <li class="item-social-media">
+                                    <i class="fab fa-google-plus-g"></i>
+                                </li>
+                            </a>
+                            <a class="link-social-media" href="#">
+                                <li class="item-social-media">
+                                    <i class="fab fa-linkedin-in"></i>
+                                </li>
+                            </a>
+                        </ul>
+                    </div> -->
+            </div>
+            <script>
+                const labelInputName = document.querySelector('#nameCreate');
+                const returnErrorName = document.querySelector('#returnErrorNameCreate');
+                labelInputName.addEventListener('click', function() {
+                    returnErrorName.innerHTML = '';
+                });
+    
+                const labelInputEmail = document.querySelector('#emailCreate');
+                const returnErrorEmail = document.querySelector('#returnErrorEmailCreate');
+                labelInputEmail.addEventListener('click', function() {
+                    returnErrorEmail.innerHTML = '';
+                });
+
+                const labelInputPassword = document.querySelector('#passwordCreate');
+                const returnErrorPassword = document.querySelector('#returnErrorPasswordCreate');
+                labelInputPassword.addEventListener('click', function() {
+                    returnErrorPassword.innerHTML = '';
+                });
+            </script>
+            <script src="../../js/createUser.js"></script>
+    </main>
+  </body>
+</html>

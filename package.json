@@ -1,5 +1,5 @@
 {
-  "name": "controledegastospessoais",
+  "name": "controledegastospessoaisfrontend",
   "version": "1.0.0",
   "description": "neste projeto irei fazer um site basico para controle de gastos pessoais",
   "main": "index.js",

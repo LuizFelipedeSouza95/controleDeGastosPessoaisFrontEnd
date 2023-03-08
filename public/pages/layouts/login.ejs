@@ -1,0 +1,50 @@
+<main class="container">
+
+        <div id="formLogin" >
+
+            <h2>Login</h2>
+            <form class="formLogin" id="formLogin">
+        
+                    <label class="label-input" for="">
+                        <i class="far fa-envelope icon-modify"></i>
+                        <div class="form-floating">
+                            <input id="emailLogin" name="email" type="email" class="form-control" placeholder="Email">
+                            <label for="inputEmailLogin">Email</label>
+                        </div>
+                    </label>
+                    <div id="returnErrorEmailLogin" class="returnErrors mb-3"></div>
+                    
+
+                    <label class="label-input" for="">
+                        <i class="fas fa-lock icon-modify"></i>
+                        <div class="form-floating">
+                            <input id="passwordLogin" type="password" class="form-control" id="inputPasswordLogin" placeholder="Password">
+                            <label for="inputPasswordLogin">Password</label>
+                        </div>
+                    </label>
+                    <div id="returnErrorPasswordLogin" class="returnErrors mb-3"></div>
+
+                    <a class="createUser mb-3" href="/createUser/">Create Account</a>
+                    
+                    <div id="returnSuccessCreate"></div>
+
+                    <button type="button" class="btn_signIn" id="btn_signIn" onclick="{signIn()}">Continue</button>
+            
+            </form>
+
+        </div>
+        <script>
+            const labelInputEmail = document.querySelector('#emailLogin');
+            const returnErrorEmail = document.querySelector('#returnErrorEmailLogin');
+            labelInputEmail.addEventListener('click', function() {
+                returnErrorEmail.innerHTML = '';
+            });
+
+            const labelInputPassword = document.querySelector('#passwordLogin');
+            const returnErrorPassword = document.querySelector('#returnErrorPasswordLogin');
+            labelInputPassword.addEventListener('click', function() {
+                returnErrorPassword.innerHTML = '';
+            });
+        </script>
+        <script src="../../js/validated.js"></script>
+</main>
