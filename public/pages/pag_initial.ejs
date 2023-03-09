@@ -1,12 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <div>TESTE LOGIN</div>
-</body>
+<html lang="pt-br">
+
+  <%- include ('./layouts/head.ejs'); -%>
+  
+  <script src="https://kit.fontawesome.com/1ab94d0eba.js" crossorigin="anonymous"></script>
+    <style>
+      #table {
+        display: none;
+      }
+    </style>
+  <body>
+
+        <nav class="navbar navbar-dark bg-dark fixed-top" id="sideNav">
+          <div class="collapse navbar-collapse p-1" id="navbarResponsive">
+            <ul class="navbar-nav">
+              <span><img class="img-fluid img-profile rounded-circle mx-auto mb-3" src="../img/card.jpg" alt="..." /></span>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#teste" onclick="mostrarTabela()">Janeiro</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Fevereiro</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Março</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Abril</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Maio</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Junho</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Julho</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Agosto</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Setembro</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Outubro</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Novembro</a></li>
+              <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#about">Dezembro</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <table id="table" class="table table-hover">
+          <thead>
+            <tr>
+              <th scope="col">Janeiro</th>
+            </tr>
+          </thead>
+
+          <thead>
+            <tr>
+              <th scope="col">Descrição</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Data Vencimento</th>
+              <th scope="col">Data Pagamento</th>
+              <th scope="col">Pago?</th>
+            </tr>
+          </thead>
+
+          <tbody id="listAccounts">
+            <tr>
+              <td>Carro</td>
+              <td>R$1.180,50</td>
+              <td>18/03/2023</td>
+              <td>18/03/2023</td>
+              <td>Sim</td>
+            </tr>
+          </tbody>
+
+        </table>
+
+        <script>
+          function mostrarTabela() {
+            var table = document.getElementById("table");
+                if (table.style.display === "none") {
+                  table.style.display = "table";
+                } else {
+                  table.style.display = "none";
+                }
+             }
+        </script>
+              <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
 </html>

@@ -12,12 +12,12 @@ app.set("views", path.join(__dirname, "./pages"));
 app.use(express.static("public"));
 
 app.get("/login", function (req, res) {
-  res.render("./main", { pageCurrent: "./layouts/login.ejs" });
+  res.render("./main", { pageCurrent: "./pag_initial.ejs"/* "./layouts/login.ejs" */ });
 });
 
 app.use(cors());
 
-app.get("/spending/:name", urlencoded, async function (req, res) {
+app.get("/spending/:name/:id", urlencoded, async function (req, res) {
   res.render("./main", {
     pageCurrent: "./pag_initial.ejs",
   });

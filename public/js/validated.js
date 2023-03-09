@@ -69,7 +69,7 @@ async function signIn() {
 
       setTimeout(function () {
         successDiv.removeChild(successMessage);
-        window.location.href = `/spending/` + user.name;
+        window.location.href = `/spending/${user.name}/${user.id}`;
       }, 1000);
     } else {
       console.log("nao passou");
