@@ -97,7 +97,13 @@ async function createUser() {
   }
 }
 
-document.addEventListener("btn_Create", function () {
-  el.addEventListener("submit", createUser, false);
-});
+const btnSignUp = document.querySelector("#btn_Create");
+const form = document.querySelector("#formCreate");
 
+btnSignUp.addEventListener("click", createUser);
+
+form.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    createUser();
+  }
+});

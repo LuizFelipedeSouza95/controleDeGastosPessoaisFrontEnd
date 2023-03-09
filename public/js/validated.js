@@ -51,10 +51,9 @@ async function signIn() {
     } else if (user.password !== password) {
       setError("password", "Incorrect password");
     } else if (user.email === email && user.password === password) {
-
       const successDiv = document.getElementById("returnSuccessCreate");
       const pSuccess = document.createElement("p");
-      pSuccess.id = "successMessage"
+      pSuccess.id = "successMessage";
       pSuccess.innerHTML = "Successfully!";
       pSuccess.className = "success";
       successDiv.appendChild(pSuccess);
@@ -78,6 +77,13 @@ async function signIn() {
   }
 }
 
-document.addEventListener("formLogin", function () {
-  el.addEventListener("submit", getContent, false);
+const btnSignIn = document.querySelector("#btn_signIn");
+const form = document.querySelector("#formLogin");
+
+btnSignIn.addEventListener("click", signIn);
+
+form.addEventListener("keyup", function (event) {
+  if (event.key === "Enter") {
+    signIn();
+  }
 });
