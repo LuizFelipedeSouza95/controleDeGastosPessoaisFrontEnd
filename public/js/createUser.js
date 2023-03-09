@@ -5,7 +5,7 @@ async function createUser() {
 
   const validate = { email, password };
   let regexPassword =
-    /(?=.*\d)(?=.*[}{,.$^?~=+\-_\/*\-+.\|])(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9a-zA-Z$*&@#]).{8,}/;
+    /^(?=.*\d)(?=.*[{}[\],$^?~=+\-_/*\-+.|@])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z{}[\],$^?~=+\-_/*\-+.|@]{8,}$/;
   let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
   const validationEmail = regexEmail.test(validate.email);
@@ -100,3 +100,4 @@ async function createUser() {
 document.addEventListener("btn_Create", function () {
   el.addEventListener("submit", createUser, false);
 });
+
