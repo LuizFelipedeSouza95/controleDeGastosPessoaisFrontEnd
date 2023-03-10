@@ -11,22 +11,18 @@ app.set("views", path.join(__dirname, "./pages"));
 
 app.use(express.static("public"));
 
-app.get("/login", function (req, res) {
-  res.render("./main", { pageCurrent: "./pag_initial.ejs"/* "./layouts/login.ejs" */ });
-});
-
 app.use(cors());
 
-app.get("/spending/:name/:id", urlencoded, async function (req, res) {
-  res.render("./main", {
-    pageCurrent: "./pag_initial.ejs",
-  });
+app.get("/login", urlencoded, async function (req, res) {
+  res.render("./login.ejs" /*, { pageCurrent: "./login.ejs" }*/);
 });
 
-app.get("/createUser", urlencoded, async function (req, res) {
-  res.render("./main", {
-    pageCurrent: "./createAccount.ejs",
-  });
+app.get("/spending/:id", urlencoded, async function (req, res) {
+  res.render("./pag_initial.ejs" /* , {pageCurrent: "./pag_initial.ejs"} */);
+});
+
+app.get("/createAccount", urlencoded, async function (req, res) {
+  res.render("./createAccount.ejs" /* , {pageCurrent: "./createAccount.ejs"} */);
 });
 
 app.listen(PORT, async () => {

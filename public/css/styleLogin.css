@@ -87,7 +87,7 @@ top: -5px;
     text-decoration: none;
 }
 .forget label a:hover{
-    text-decoration: underline;
+    color: black;
 }
 button{
     width: 100%;
@@ -113,6 +113,7 @@ button{
 }
 .register p a:hover{
     text-decoration: underline;
+    color: black;
 }
 
 input:-webkit-autofill,
@@ -129,4 +130,9 @@ select:-webkit-autofill:focus {
   -webkit-box-shadow: 0 0 0px 1000px transparent inset;
   transition: background-color 5000s ease-in-out 0s;
   border-style: none;
+}
+
+#btn:hover{
+    background: #807d7d;
+    color: black;
 }

@@ -6,7 +6,7 @@ async function signIn() {
   let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const validationEmail = regexEmail.test(validate.email);
 
-  const errors = {
+/*   const errors = {
     email: false,
     password: false,
   };
@@ -31,7 +31,7 @@ async function signIn() {
   const errorDivs = document.querySelectorAll(".returnErrors");
   errorDivs.forEach((div) => {
     div.innerHTML = "";
-  });
+  }); */
 
   if (email.trim() === "") {
     setError("email", "Enter a email");
@@ -69,7 +69,7 @@ async function signIn() {
 
       setTimeout(function () {
         successDiv.removeChild(successMessage);
-        window.location.href = `/spending/${user.name}/${user.id}`;
+        window.location.href = `/spending/${user.id}?name=${user.name}`;
       }, 1000);
     } else {
       console.log("nao passou");
