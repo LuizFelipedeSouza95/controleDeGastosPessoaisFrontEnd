@@ -12,11 +12,11 @@
 
             <div class="form-floating">
 
-                <form action="" autocomplete='false'>
+                <form class="formLogin" action="" autocomplete='false'>
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
-                        <input type="email"  autocomplete='off' required>
+                        <input id="emailLogin" type="email"  autocomplete='off' required>
                         <label for="">Email</label>
                     </div>
 
@@ -24,7 +24,7 @@
 
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input type="password" required>
+                        <input id="passwordLogin" type="password" required>
                         <label for="">Password</label>
                     </div>
 
@@ -34,10 +34,10 @@
                         <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
                     </div>
 
-                    <button id="btn">Log in</button>
+                    <button onclick="{signIn()}" id="btn_signIn">Log in</button>
 
                     <div class="register">
-                        <p>Don't have a account  <a href="#">Register</a></p>
+                        <p>Don't have a account  <a href="./createAccount.ejs">Register</a></p>
                     </div>
 
                 </form>
