@@ -14,16 +14,18 @@
 
                 <form id="formLogin" class="formLogin" action="" autocomplete='false'>
                     <h2>Login</h2>
+
                     <div class="inputbox">
-                        <ion-icon name="mail-outline"></ion-icon>
-                        <input id="emailLogin" type="email"  autocomplete='off' required>
-                        <label for="">Email</label>
+                        <ion-icon id="iconEmail" name="mail-outline"></ion-icon>
+                        <input id="creatingEmail" type="email" autocomplete="email" required>
+                        <label for="creatingEmail">Email</label>
                     </div>
 
                     <div class="inputbox">
-                        <ion-icon name="lock-closed-outline"></ion-icon>
-                        <input id="passwordLogin" type="password" required>
+                        <ion-icon id="iconPassword" name="lock-closed-outline"></ion-icon>
                         <label for="">Password</label>
+                        <input id="loginPassword" type="password" required>
+                        <ion-icon id="iconEyePassword" name="eye-outline"></ion-icon>
                     </div>
 
                     <div class="forget">
@@ -33,7 +35,7 @@
                     <button type="button" onclick="{signIn}" id="btn_signIn">SignIn</button>
 
                     <div class="register">
-                        <p>Don't have a account  <a href="./createAccount.ejs">Register</a></p>
+                        <p>Don't have a account  <a href="/createAccount">Register</a></p>
                         <br>
                         <div id="returnErrorsLogin" class="returnErrorsLogin"></div>
                     </div>
@@ -43,6 +45,21 @@
         </div>
     </section>
     <script>
+
+        const iconEyePassword = document.querySelector('#iconEyePassword');
+        const loginPassword = document.querySelector('#loginPassword');
+
+        iconEyePassword.addEventListener('click', togglePasswordVisibility);
+
+        function togglePasswordVisibility(event) {
+            const icon = event.target;
+            const inputField = icon.previousElementSibling;
+            const inputType = inputField.getAttribute('type');
+            const newInputType = inputType === 'password' ? 'text' : 'password';
+            inputField.setAttribute('type', newInputType);
+            icon.name = newInputType === 'password' ? 'eye-outline' : 'eye-off-outline';
+        }
+
         const labelInputEmail = document.querySelector('#emailLogin');
         const returnErrorEmail = document.querySelector('#returnErrorsLogin');
         labelInputEmail.addEventListener('click', function() {

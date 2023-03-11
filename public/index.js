@@ -32,7 +32,7 @@ app.get("/createAccount", urlencoded, async function (req, res) {
 });
 
 app.listen(PORT, async () => {
-  console.info(`⚡️Server is running at http://localhost:${PORT}/login`);
+  console.info(`⚡️Server is running at http://localhost:${PORT}/home`);
 });
 
 module.exports = { PORT };
