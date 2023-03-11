@@ -13,12 +13,11 @@ app.use(express.static("public"));
 
 app.use(cors());
 
-
-app.get("/", urlencoded, async function (req, res) {
+app.get("/home", urlencoded, async function (req, res) {
   res.render("./main.ejs");
 });
 
-app.get("/login", urlencoded, async function (req, res) {
+app.get("/login", async function (req, res) {
   res.render("./login.ejs" /*, { pageCurrent: "./login.ejs" }*/);
 });
 
@@ -27,7 +26,9 @@ app.get("/spending/:id", urlencoded, async function (req, res) {
 });
 
 app.get("/createAccount", urlencoded, async function (req, res) {
-  res.render("./createAccount.ejs" /* , {pageCurrent: "./createAccount.ejs"} */);
+  res.render(
+    "./createAccount.ejs" /* , {pageCurrent: "./createAccount.ejs"} */
+  );
 });
 
 app.listen(PORT, async () => {

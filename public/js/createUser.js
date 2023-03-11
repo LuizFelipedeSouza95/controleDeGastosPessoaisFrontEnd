@@ -11,7 +11,7 @@ async function createUser() {
   const validationEmail = regexEmail.test(validate.email);
   const validationPassword = regexPassword.test(validate.password);
 
-/*   const errors = {
+  const errors = {
     name: false,
     email: false,
     password: false,
@@ -37,7 +37,7 @@ async function createUser() {
   const errorDivs = document.querySelectorAll(".returnErrors");
   errorDivs.forEach((div) => {
     div.innerHTML = "";
-  }); */
+  });
 
   if (name.trim() === "") {
     setError("name", "Enter a name");

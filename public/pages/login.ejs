@@ -12,7 +12,7 @@
 
             <div class="form-floating">
 
-                <form class="formLogin" action="" autocomplete='false'>
+                <form id="formLogin" class="formLogin" action="" autocomplete='false'>
                     <h2>Login</h2>
                     <div class="inputbox">
                         <ion-icon name="mail-outline"></ion-icon>
@@ -20,30 +20,41 @@
                         <label for="">Email</label>
                     </div>
 
-                    <div id="returnErrorEmailLogin" class="returnErrors mb-3"></div>
-
                     <div class="inputbox">
                         <ion-icon name="lock-closed-outline"></ion-icon>
                         <input id="passwordLogin" type="password" required>
                         <label for="">Password</label>
                     </div>
 
-                    <div id="returnErrorPasswordLogin" class="returnErrors mb-3"></div>
-
                     <div class="forget">
                         <label for=""><input type="checkbox">Remember Me  <a href="#">Forget Password</a></label>
                     </div>
 
-                    <button onclick="{signIn()}" id="btn_signIn">Log in</button>
+                    <button type="button" onclick="{signIn}" id="btn_signIn">SignIn</button>
 
                     <div class="register">
                         <p>Don't have a account  <a href="./createAccount.ejs">Register</a></p>
+                        <br>
+                        <div id="returnErrorsLogin" class="returnErrorsLogin"></div>
                     </div>
 
                 </form>
             </div>
         </div>
     </section>
+    <script>
+        const labelInputEmail = document.querySelector('#emailLogin');
+        const returnErrorEmail = document.querySelector('#returnErrorsLogin');
+        labelInputEmail.addEventListener('click', function() {
+            returnErrorEmail.innerHTML = '';
+        });
+
+        const labelInputPassword = document.querySelector('#passwordLogin');
+        const returnErrorPassword = document.querySelector('#returnErrorsLogin');
+        labelInputPassword.addEventListener('click', function() {
+            returnErrorPassword.innerHTML = '';
+        });
+    </script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>

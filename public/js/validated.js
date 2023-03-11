@@ -6,7 +6,7 @@ async function signIn() {
   let regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   const validationEmail = regexEmail.test(validate.email);
 
-/*   const errors = {
+  const errors = {
     email: false,
     password: false,
   };
@@ -17,9 +17,8 @@ async function signIn() {
 
   function setError(field, message) {
     if (!errors[field]) {
-      const errorDiv = document.getElementById(
-        `returnError${field.charAt(0).toUpperCase() + field.slice(1)}Login`
-      );
+      //${field.charAt(0).toUpperCase() + field.slice(1)}
+      const errorDiv = document.getElementById("returnErrorsLogin");
       const pError = document.createElement("p");
       pError.innerHTML = message;
       pError.className = "error";
@@ -28,51 +27,47 @@ async function signIn() {
     }
   }
 
-  const errorDivs = document.querySelectorAll(".returnErrors");
+  const errorDivs = document.querySelectorAll(".returnErrorsLogin");
   errorDivs.forEach((div) => {
     div.innerHTML = "";
-  }); */
+  });
 
   if (email.trim() === "") {
     setError("email", "Enter a email");
+  } else if (password.trim() === "") {
+    setError("password", "Enter a password");
   } else if (!validationEmail) {
     setError("email", "Enter a valid email");
   } else if (hasErrors()) {
     return;
   } else {
-    const response = await fetch(
-      `http://localhost:3000/searchUser?email=${email}`
-    );
-    const result = await response.json();
-    const user = result[0];
+    try {
+      const response = await fetch(
+        `http://localhost:3000/searchUser?email=${email}`
+      );
+      const result = await response.json();
+      const user = result[0];
 
-    if (user == undefined) {
-      setError("email", "email not found");
-    } else if (user.password !== password) {
-      setError("password", "Incorrect password");
-    } else if (user.email === email && user.password === password) {
-      const successDiv = document.getElementById("returnSuccessCreate");
-      const pSuccess = document.createElement("p");
-      pSuccess.id = "successMessage";
-      pSuccess.innerHTML = "Successfully!";
-      pSuccess.className = "success";
-      successDiv.appendChild(pSuccess);
+      if (user == undefined) {
+        setError("email", "email not found");
+      } else if (user.password !== password) {
+        setError("password", "Incorrect password");
+      } else if (user.email === email && user.password === password) {
+        console.log("teste");
 
-      const successMessage = document.getElementById("successMessage");
-      const emailCreateInput = document.getElementById("emailLogin");
-      const passwordCreateInput = document.getElementById("passwordLogin");
+        if (email && password) {
+          email.value = "";
+          password.value = "";
+        }
 
-      if (emailCreateInput && passwordCreateInput) {
-        emailCreateInput.value = "";
-        passwordCreateInput.value = "";
+        setTimeout(function () {
+          window.location.href = `/spending/${user.id}?name=${user.name}`;
+        }, 1000);
+      } else {
+        console.log("nao passou");
       }
-
-      setTimeout(function () {
-        successDiv.removeChild(successMessage);
-        window.location.href = `/spending/${user.id}?name=${user.name}`;
-      }, 1000);
-    } else {
-      console.log("nao passou");
+    } catch (error) {
+      console.log(error);
     }
   }
 }

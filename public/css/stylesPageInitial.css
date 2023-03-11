@@ -1,95 +1,56 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap");
 
 * {
-    margin: 0;
-    border: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: "Poppins", sans-serif;
+  margin: 0;
+  border: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
-/*     background-image: url(../img/image.jpg); */
-    background-color: green;
-    background-repeat: no-repeat;
-    min-height: 100vh;
-    min-width: 100vw;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100%;
+  background: url("../img/imagemFundo2.jpg") no-repeat;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  width: 100%;
 }
 
-.table{
-    background: white;
+.table {
+  background: white;
 }
 
-@media (min-width: 540px) {
-    body {
-        padding-top: 0;
-        padding-left: 17rem;
-      }
-    #sideNav {
-      padding-left: 0;
-      padding-right: 0;
-      text-align: center;
-      position: fixed;
-      top: 0;
-      left: 0;
-      display: flex;
-      flex-direction: column;
-      width: 20rem;
-      height: 100%;
-    }
-    #sideNav .navbar-collapse {
-      display: flex;
-      align-items: flex-start;
-      flex-grow: 0;
-      width: 100%;
-      margin-bottom: auto;
-    }
-    #sideNav .navbar-collapse .navbar-nav {
-      flex-direction: column;
-      width: 100%;
-    }
+.container {
+  left: 0;
+  width: 100%;
+  items-align: left;
 }
 
-@media (max-width: 540px) {
-  .navbar.fixed-top {
-    position: static;
-  }
-  #sideNav {
-    padding-left: 0;
-    padding-right: 0;
-    text-align: center;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    width: 20rem;
-    height: 100%;
-  }
-  #sideNav .navbar-collapse {
-    display: flex;
-    align-items: flex-start;
-    flex-grow: 0;
-    width: 100%;
-    margin-bottom: auto;
-  }
-  #sideNav .navbar-collapse .navbar-nav {
-    flex-direction: column;
-    width: 100%;
-  }
+.table {
+  left: 0;
 }
 
-.nav-item {
-    font-weight: 800;
-    letter-spacing: 0.03rem;
-    text-transform: uppercase;
+.navbar {
+  background: black;
 }
 
-#divTable{
-    width: 800px;
+.shadow-lg {
+  background: #83b0f7;
+  font-size: 2vw;
+  font-weight: 500;
+  //font-family: "ROBOTO", sans-serif;
+}
+.form-select {
+  color: white;
+}
+
+#divDados {
+  margin: 4px;
+  padding: 4px;
+}
+.titles-info {
+  color: white;
 }
