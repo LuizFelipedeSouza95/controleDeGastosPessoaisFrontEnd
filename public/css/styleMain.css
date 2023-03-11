@@ -13,12 +13,11 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: 70vh;
     position: relative;
     background-image: url("../img/imagemFundo2.jpg");
-    /* background-color: #1e1f26; */
+    background-color: #1e1f26;
     text-align: center;
-    width: 100%;
     padding: 0 2em;
 }
 .nav h1{
@@ -53,7 +52,6 @@ a {
 }
 .nav-container {
     display: flex;
-    flex-direction: row;
     position: absolute;
     bottom: 0;
     width: 100%;
@@ -68,15 +66,17 @@ a {
     justify-content: center;
     align-items: center;
     flex: 1;
-    color: #03dac6;
+    color: #9fa2a2;;
     letter-spacing: 0.1rem;
     transition: all 0.5s ease;
     font-size: 2vw;
+    cursor: pointer;
 }
 .nav-tab:hover {
-    color: #1e1f26;
-    background: #03dac6;
+    color: #a4a6b1;
+    background: #892227;
     transition: all 0.5s ease;
+    cursor: pointer;
 }
 .nav-tab-slider {
     position: absolute;
