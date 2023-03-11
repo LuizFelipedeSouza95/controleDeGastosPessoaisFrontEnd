@@ -47,8 +47,10 @@
                         <ion-icon id="iconEyeRepeatPassword" name="eye-outline"></ion-icon>
                     </div>
 
-                    <button type="button" onclick="{signIn}" id="btn_signUp">SignUp</button>
+                    <button type="button" onclick="{signUp}" id="btn_signUp">SignUp</button>
 
+                    <div id="returnErrorsScreenCreateUsers" class="returnErrorsScreenCreateUsers"></div>
+                    <br><br>
                 </form>
             </div>
         </div>
@@ -78,25 +80,32 @@
         document.getElementById('creatingUsername').value = '';
         };
 
-/*         const labelInputName = document.querySelector('#nameCreate');
-        const returnErrorName = document.querySelector('#returnErrorNameCreate');
+        const labelInputName = document.querySelector('#creatingUsername');
+        const returnErrorName = document.querySelector('#returnErrorsScreenCreateUsers');
         labelInputName.addEventListener('click', function() {
             returnErrorName.innerHTML = '';
         });
 
-        const labelInputEmail = document.querySelector('#emailCreate');
-        const returnErrorEmail = document.querySelector('#returnErrorEmailCreate');
+        const labelInputEmail = document.querySelector('#creatingEmail');
+        const returnErrorEmail = document.querySelector('#returnErrorsScreenCreateUsers');
         labelInputEmail.addEventListener('click', function() {
             returnErrorEmail.innerHTML = '';
         });
 
-        const labelInputPassword = document.querySelector('#passwordCreate');
-        const returnErrorPassword = document.querySelector('#returnErrorPasswordCreate');
+        const labelInputPassword = document.querySelector('#creatingPassword');
+        const returnErrorPassword = document.querySelector('#returnErrorsScreenCreateUsers');
         labelInputPassword.addEventListener('click', function() {
             returnErrorPassword.innerHTML = '';
-        }); */
+        });
+
+        const labelInputRepeatPassword = document.querySelector('#creatingRepeatPassword');
+        const returnErrorRepeatPassword = document.querySelector('#returnErrorsScreenCreateUsers');
+        labelInputPassword.addEventListener('click', function() {
+            returnErrorPassword.innerHTML = '';
+        });
+
     </script>
-    <script src="../../js/createUser.js"></script>
+    <script src="../js/creatingUsers.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
   </body>

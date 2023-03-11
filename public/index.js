@@ -18,17 +18,19 @@ app.get("/home", urlencoded, async function (req, res) {
 });
 
 app.get("/login", async function (req, res) {
-  res.render("./login.ejs" /*, { pageCurrent: "./login.ejs" }*/);
+  res.render("./login.ejs");
 });
 
 app.get("/spending/:id", urlencoded, async function (req, res) {
-  res.render("./pag_initial.ejs" /* , {pageCurrent: "./pag_initial.ejs"} */);
+  res.render("./pag_initial.ejs");
 });
 
 app.get("/createAccount", urlencoded, async function (req, res) {
-  res.render(
-    "./createAccount.ejs" /* , {pageCurrent: "./createAccount.ejs"} */
-  );
+  res.render("./createAccount.ejs");
+});
+
+app.get("/forgetPassword", urlencoded, async function (req, res) {
+  res.render("./forgetPassword.ejs");
 });
 
 app.listen(PORT, async () => {

@@ -146,23 +146,22 @@ button {
   font-weight: 600;
 }
 
-.register {
+.returnErrorsScreenCreateUsers {
   font-size: 0.9em;
   color: #fff;
   text-align: center;
   margin: 25px 0 10px;
 }
 
-.register p a {
+.returnErrorsScreenCreateUsers p {
   text-decoration: none;
   color: #fff;
   font-weight: 600;
 }
 
-.register p a:hover {
-  text-decoration: underline;
-  color: black;
-}
+/* .returnErrorsScreenCreateUsers p:hover {
+  color: red;
+} */
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -179,13 +178,9 @@ select:-webkit-autofill:focus {
   border-style: none;
 }
 
-#btn_signIn:hover {
+#btn_signUp:hover {
   background: #807d7d;
   color: black;
-}
-
-.returnErrorsLogin {
-  color: white;
 }
 
 #showPassword {

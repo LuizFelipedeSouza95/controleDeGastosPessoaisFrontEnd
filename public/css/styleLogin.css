@@ -164,3 +164,7 @@ select:-webkit-autofill:focus {
 .returnErrorsLogin {
   color: white;
 }
+
+.returnErrorsLogin p:hover {
+  color: red;
+}
