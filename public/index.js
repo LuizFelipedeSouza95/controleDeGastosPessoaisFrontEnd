@@ -13,6 +13,11 @@ app.use(express.static("public"));
 
 app.use(cors());
 
+
+app.get("/", urlencoded, async function (req, res) {
+  res.render("./main.ejs");
+});
+
 app.get("/login", urlencoded, async function (req, res) {
   res.render("./login.ejs" /*, { pageCurrent: "./login.ejs" }*/);
 });
