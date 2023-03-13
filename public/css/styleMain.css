@@ -24,10 +24,28 @@ body {
   width: 100%;
   
 }
-.BotaoIniciarSessao{
+.Botoes{
   display: flex;
-  padding: 5px;
-  justify-content: end;
+  gap: 10px;
+}
+.buttonHeader{
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #9fa2a2;
+  background-color: transparent;
+  color: #9fa2a2;
+  cursor: pointer;
+  transition: 0.4s;
+}
+.buttonHeader:hover{
+  font-size: 20px;
+  padding: 10px 15px;
+  border-radius: 10px;
+  border: 1px solid #ff0044;
+  background-color: black;
+  color: #fff;
+  cursor: pointer;
 }
 .cabecalhoGeral{
   background-color: #191c21; 
